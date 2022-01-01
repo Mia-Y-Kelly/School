@@ -1,1 +1,1 @@
-To store stuff for school
+To store current program for school.
