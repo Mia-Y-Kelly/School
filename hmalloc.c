@@ -1,5 +1,7 @@
 #include "hmalloc.h"
 #include <stdlib.h>
+
+#include <stdio.h>
 /*You may include any other relevant headers here.*/
 
 
@@ -18,6 +20,7 @@ void traverse(){
 	 *    -Address is the pointer to the beginning of the area.
 	 *    -Length is the length in bytes of the free area.
 	 */
+
 }
 
 /* hmalloc
@@ -34,8 +37,8 @@ void traverse(){
  *     to the user.
  */
 void *hmalloc(int bytes_to_allocate){
-	
-   return NULL; //placeholder to be replaced by proper return value
+
+	return malloc(bytes_to_allocate); //placeholder to be replaced by proper return value
 }
 
 /* hcalloc
@@ -44,7 +47,7 @@ void *hmalloc(int bytes_to_allocate){
  */
 void *hcalloc(int bytes_to_allocate){
 	
-   return NULL; //placeholder to be replaced by proper return value
+	return NULL; //placeholder to be replaced by proper return value
 }
 
 /* hfree

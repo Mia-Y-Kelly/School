@@ -1,6 +1,7 @@
 #include "hmalloc.h"
 /*You may include any other relevant headers here.*/
-
+#include <stdio.h>
+#include <stdlib.h>
 
 /*	main()
  *	Use this function to develop tests for hmalloc. You should not 
@@ -10,7 +11,20 @@
  *	with my own implementation for testing.*/
 int main(int argc, char *argv[]){
 	// some calls to hmalloc
-	// ...
+	int counter = 0;
+	// do
+	// {
+		int num;
+		printf("Enter a number: ");
+		scanf("%d", &num);
+		int* ptr = (int*)hmalloc(num * sizeof(int));
+	
+		printf("%p\n",ptr);
+
+	// 	counter = counter + 1;
+	// } while (counter < 5);
+
+
 	// some calls to hfree
 	
 	return 1;
