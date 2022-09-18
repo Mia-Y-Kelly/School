@@ -11,15 +11,20 @@
  *	with my own implementation for testing.*/
 int main(int argc, char *argv[]){
 	// some calls to hmalloc
-	int counter = 0;
+	// int counter = 0;
 	// do
 	// {
+
+
 		int num;
+		int* ptr;
+		int* loc = (int*)sbrk(0);
+		printf("Current memory location: %p\n", loc);
 		printf("Enter a number: ");
 		scanf("%d", &num);
-		int* ptr = (int*)hmalloc(num * sizeof(int));
+		ptr = (int*)hmalloc(num * sizeof(int));
 	
-		printf("%p\n",ptr);
+		printf("Pointer to %p\n",ptr);
 
 	// 	counter = counter + 1;
 	// } while (counter < 5);

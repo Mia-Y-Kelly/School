@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 /*You may include any other relevant headers here.*/
-
+#include <string.h>
 
 /*Add additional data structures and globals here as needed.*/
 void *free_list = NULL;
@@ -37,8 +37,23 @@ void traverse(){
  *     to the user.
  */
 void *hmalloc(int bytes_to_allocate){
+	
+	// float current_loc = sbrk(0);
+	unsigned int loc, new_loc;
 
-	return malloc(bytes_to_allocate); //placeholder to be replaced by proper return value
+	int* ptr;
+	// int diff;
+
+	// loc = sbrk(0);
+	// printf("Current location is %u\n", loc);
+	// loc = sbrk(bytes_to_allocate);
+	// new_loc = sbrk(0);
+	// diff = new_loc-loc;
+	// printf("New location in memory is %u\n", new_loc);
+	// printf("Increased pointer by %d\n", diff);
+
+	// ptr = (int *) new_loc;
+	return sbrk(bytes_to_allocate); //placeholder to be replaced by proper return value
 }
 
 /* hcalloc
