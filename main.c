@@ -18,13 +18,15 @@ int main(int argc, char *argv[]){
 
 		int num;
 		int* ptr;
-		int* loc = (int*)sbrk(0);
+		int* loc = (int *) sbrk(0);
 		printf("Current memory location: %p\n", loc);
 		printf("Enter a number: ");
 		scanf("%d", &num);
-		ptr = (int*)hmalloc(num * sizeof(int));
-	
+		ptr = (int *) hmalloc(num * sizeof(int));
+		printf("c\n");
 		printf("Pointer to %p\n",ptr);
+		loc = (int *) sbrk(0);
+		printf("Current memory location: %p\n", loc);
 
 	// 	counter = counter + 1;
 	// } while (counter < 5);
@@ -32,5 +34,5 @@ int main(int argc, char *argv[]){
 
 	// some calls to hfree
 	
-	return 1;
+	return 0;
 }

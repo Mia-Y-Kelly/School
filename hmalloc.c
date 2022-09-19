@@ -6,7 +6,15 @@
 #include <string.h>
 
 /*Add additional data structures and globals here as needed.*/
-void *free_list = NULL;
+// Node data structure for linked list implementation
+struct node {
+    int length;
+    int link; // Offset in bytes from current entry
+    struct node *next;
+};
+
+struct node* free_list = NULL;	// Store the head node
+struct node* head = NULL;	// Store the current
 
 /* traverse
  * Start at the free list head, visit and print the length of each
@@ -37,11 +45,17 @@ void traverse(){
  *     to the user.
  */
 void *hmalloc(int bytes_to_allocate){
+	// printf("a\n");
+	// head->length = bytes_to_allocate;	// Save the length allocated to first word
+	// head->link = 0;						// Head 0 away from itself
+	// head->next = NULL;
+	// printf("b\n");
+	bytes_to_allocate = bytes_to_allocate + 2;	// Add two word buffer
 	
 	// float current_loc = sbrk(0);
-	unsigned int loc, new_loc;
+	// unsigned int loc, new_loc;
 
-	int* ptr;
+	// int* ptr;
 	// int diff;
 
 	// loc = sbrk(0);
@@ -53,6 +67,8 @@ void *hmalloc(int bytes_to_allocate){
 	// printf("Increased pointer by %d\n", diff);
 
 	// ptr = (int *) new_loc;
+
+
 	return sbrk(bytes_to_allocate); //placeholder to be replaced by proper return value
 }
 
@@ -79,3 +95,11 @@ void hfree(void *ptr){
  * to hmalloc.h for your function.*/
 
 /*You may add additional functions as needed.*/
+// struct node addNode(int len, void* ptr) {
+//     struct node newNode;
+
+//     newNode.length = len;
+//     newNode.next = ptr;
+
+//     return newNode;
+// }
